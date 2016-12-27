@@ -5,20 +5,27 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    tools:context="com.example.ysd.firstdemo.MainActivity">
+    tools:context="com.example.ysd.firstdemo.OkHttpTestActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center_vertical">
 
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_toBack_okHttpTestActivity"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:src="@mipmap/ic_toback" />-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试主界面"
             android:layout_centerInParent="true"
-            android:textSize="23sp"
-            android:textColor="#000"/>
+            android:text="OKHTTP测试"
+            android:textColor="#000"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -30,62 +37,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:orientation="vertical">
 
+
         <Button
-            android:id="@+id/btn_okHttp_mainActivity"
+            android:id="@+id/btn_get_okHttpTestActivity"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="20dp"
             android:background="#ccc"
             android:gravity="center"
-            android:text="okHttp测试"
-            android:textSize="20sp"
-            android:textColor="#000" />
+            android:text="GET请求"
+            android:textColor="#000"
+            android:textSize="15sp" />
 
         <Button
-            android:id="@+id/btn_retrofit_mainActivity"
+            android:id="@+id/btn_post_okHttpTestActivity"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="#ccc"
             android:gravity="center"
-            android:text="retrofit测试"
-            android:textSize="20sp"
-            android:textColor="#000" />
+            android:text="POST请求"
+            android:textColor="#000"
+            android:textSize="15sp" />
 
         <Button
-            android:id="@+id/btn_gson_mainActivity"
+            android:id="@+id/btn_fileCommit_okHttpTestActivity"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:background="#ccc"
             android:gravity="center"
-            android:text="GSON解析JSON"
-            android:textSize="20sp"
-            android:textColor="#000" />
+            android:text="上传文件"
+            android:textColor="#000"
+            android:textSize="15sp" />
+
         <Button
-            android:id="@+id/btn_leakcanary_mainActivity"
+            android:id="@+id/btn_fileDownLoad_okHttpTestActivity"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
             android:background="#ccc"
             android:gravity="center"
-            android:text="leakcanary"
-            android:textSize="20sp"
-            android:textColor="#000" />
-
-        <ImageView
-            android:id="@+id/iv_image_mainActivity"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="30dp"
-            android:src="@mipmap/ic_launcher"/>
+            android:text="下载文件"
+            android:textColor="#000"
+            android:textSize="15sp" />
     </LinearLayout>
 </LinearLayout>
