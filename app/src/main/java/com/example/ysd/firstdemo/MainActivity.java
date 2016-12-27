@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.ysd.firstdemo.activity.GuideTestActivity;
 import com.example.ysd.firstdemo.event.FirstEvent;
 import com.example.ysd.firstdemo.event.SecondEvent;
 import com.example.ysd.firstdemo.event.ThirdEvent;
@@ -108,9 +107,7 @@ public class MainActivity extends AppCompatActivity {
         //Glide.get(this).clearMemory();//清理内存缓存  可以在UI主线程中进行
     }
 
-    @OnClick({R.id.btn_okHttp_mainActivity, R.id.btn_retrofit_mainActivity,
-            R.id.btn_gson_mainActivity, R.id.btn_leakcanary_mainActivity, R.id.btn_eventBus_mainActivity,
-            R.id.btn_BGABanner_mainActivity})
+    @OnClick({R.id.btn_okHttp_mainActivity, R.id.btn_retrofit_mainActivity, R.id.btn_gson_mainActivity, R.id.btn_leakcanary_mainActivity})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_okHttp_mainActivity:
@@ -130,12 +127,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_leakcanary_mainActivity:
                 startAsyncTask();
-                break;
-            case R.id.btn_eventBus_mainActivity:
-                startActivity(new Intent(MainActivity.this, EventBusTestActivity.class));
-                break;
-            case R.id.btn_BGABanner_mainActivity:
-                startActivity(new Intent(MainActivity.this, GuideTestActivity.class));
                 break;
         }
     }
@@ -230,5 +221,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+
     }
 }

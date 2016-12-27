@@ -8,6 +8,7 @@ import com.squareup.leakcanary.LeakCanary;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.HEAD;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
@@ -19,7 +20,6 @@ import static android.os.Build.VERSION_CODES.GINGERBREAD;
 public class TestApplication extends Application {
     private static  TestApplication sInstance;
     private Engine mEngine;
-
     @Override
     public void onCreate() {
         super.onCreate();
