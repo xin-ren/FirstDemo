@@ -1,16 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
     tools:context="com.example.ysd.firstdemo.MainActivity">
 
-    <Button
-        android:id="@+id/btn_first"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_margin="30dp"
-        android:text="第一个demo"
-        android:gravity="center"/>
-</RelativeLayout>
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="测试主界面"
+            android:textColor="#000"
+            android:textSize="23sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_okHttp_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:background="#ccc"
+                android:gravity="center"
+                android:text="okHttp测试"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_retrofit_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#ccc"
+                android:gravity="center"
+                android:text="retrofit测试"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gson_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#ccc"
+                android:gravity="center"
+                android:text="GSON解析JSON"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_leakcanary_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#ccc"
+                android:gravity="center"
+                android:text="leakcanary"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_eventBus_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#ccc"
+                android:gravity="center"
+                android:text="eventBus"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_BGABanner_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#ccc"
+                android:gravity="center"
+                android:text="BGABanner"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/iv_image_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="30dp"
+                android:src="@mipmap/ic_launcher" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
