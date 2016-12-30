@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="RETROFIT测试"
+            android:text="Retrofit测试"
             android:textColor="#000"
             android:textSize="20sp" />
 
@@ -111,6 +111,7 @@
                     android:layout_weight="1"
                     android:background="#ccc"
                     android:text="get请求(Query)"
+                    android:textAllCaps="false"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -124,6 +125,7 @@
                     android:layout_weight="1"
                     android:background="#ccc"
                     android:text="get请求(QueryMap)"
+                    android:textAllCaps="false"
                     android:textColor="#000"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -143,6 +145,7 @@
                     android:layout_weight="1"
                     android:background="#ccc"
                     android:text="RxJava+Retrofit(1)"
+                    android:textAllCaps="false"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -156,6 +159,7 @@
                     android:layout_weight="1"
                     android:background="#ccc"
                     android:text="RxJava+Retrofit(2)"
+                    android:textAllCaps="false"
                     android:textColor="#000"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -169,6 +173,7 @@
                 android:layout_marginTop="20dp"
                 android:background="#ccc"
                 android:text="Download"
+                android:textAllCaps="false"
                 android:textColor="#000"
                 android:textSize="15sp" />
         </LinearLayout>

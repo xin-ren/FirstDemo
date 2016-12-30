@@ -23,16 +23,14 @@ import butterknife.ButterKnife;
  * Function:RecyclerView测试界面
  * Desc:
  */
-
 public class RecyclerViewTestActivity extends AppCompatActivity {
-    private static final Class<?>[] ACTIVITY = {AnimationUseActivity.class, MultipleItemUseActivity.class, HeaderAndFooterUseActivity.class};
-    // PullToRefreshUseActivity.class, SectionUseActivity.class, EmptyViewUseActivity.class, ItemDragAndSwipeUseActivity.class,ItemClickActivity.class,
-// ExpandableUseActivity.class, DataBindingUseActivity.class};
-    private static final String[] TITLE = {"Animation", "MultipleItem", "Header/Footer"};
-    //        "PullToRefresh", "Section", "EmptyView", "DragAndSwipe", "ItemClick","ExpandableItem", "DataBinding"};
-    private static final int[] IMG = {R.drawable.gv_animation, R.drawable.gv_multipleltem, R.drawable.gv_header_and_footer};
-// R.mipmap.gv_pulltorefresh,R.mipmap.gv_section,R.mipmap.gv_empty,R.mipmap.gv_drag_and_swipe,R.mipmap.gv_item_click,
-// R.mipmap.gv_expandable,R.mipmap.gv_databinding,};
+    private static final Class<?>[] ACTIVITY = {AnimationUseActivity.class, MultipleItemUseActivity.class, HeaderAndFooterUseActivity.class,
+            PullToRefreshUseActivity.class, SectionUseActivity.class, EmptyViewUseActivity.class, ItemDragAndSwipeUseActivity.class,
+            ItemClickActivity.class, ExpandableUseActivity.class, DataBindingUseActivity.class};
+    private static final String[] TITLE = {"Animation", "MultipleItem", "Header/Footer", "PullToRefresh", "Section", "EmptyView", "DragAndSwipe",
+            "ItemClick","ExpandableItem", "DataBinding"};
+    private static final int[] IMG = {R.drawable.gv_animation, R.drawable.gv_multipleltem, R.drawable.gv_header_and_footer, R.drawable.gv_pulltorefresh,
+            R.drawable.gv_section, R.drawable.gv_empty, R.drawable.gv_drag_and_swipe, R.drawable.gv_item_click,R.drawable.gv_expandable,R.drawable.gv_databinding};
 
     @BindView(R.id.rv_test_recyclerViewTest)
     RecyclerView rv_test_recyclerViewTest;
@@ -44,7 +42,7 @@ public class RecyclerViewTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view_test);
         ButterKnife.bind(this);
-        rv_test_recyclerViewTest.setLayoutManager(new GridLayoutManager(this,2));
+        rv_test_recyclerViewTest.setLayoutManager(new GridLayoutManager(this, 3));
         initData();
         initAdapter();
     }

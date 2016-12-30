@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.ysd.firstdemo.activity.BGABannerTestActivity;
 import com.example.ysd.firstdemo.activity.FlycoTabLayoutTestActivity;
 import com.example.ysd.firstdemo.activity.RecyclerViewTestActivity;
 import com.example.ysd.firstdemo.event.FirstEvent;
@@ -114,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.btn_okHttp_mainActivity, R.id.btn_retrofit_mainActivity, R.id.btn_gson_mainActivity,
-            R.id.btn_leakcanary_mainActivity, R.id.btn_eventBus_mainActivity, R.id.btn_FlycoTabLayout_mainActivity, R.id.btn_RecyclerView_mainActivity})
+            R.id.btn_leakcanary_mainActivity, R.id.btn_eventBus_mainActivity, R.id.btn_FlycoTabLayout_mainActivity,
+            R.id.btn_RecyclerView_mainActivity,R.id.btn_BGABanner_mainActivity})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_okHttp_mainActivity:
@@ -143,6 +145,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_RecyclerView_mainActivity:
                 startActivity(new Intent(MainActivity.this, RecyclerViewTestActivity.class));
+                break;
+            case R.id.btn_BGABanner_mainActivity:
+                startActivity(new Intent(MainActivity.this, BGABannerTestActivity.class));
                 break;
         }
     }
