@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.ysd.firstdemo.activity.FlycoTabLayoutTestActivity;
+import com.example.ysd.firstdemo.activity.RecyclerViewTestActivity;
 import com.example.ysd.firstdemo.event.FirstEvent;
 import com.example.ysd.firstdemo.event.SecondEvent;
 import com.example.ysd.firstdemo.event.ThirdEvent;
@@ -52,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
     Button btn_eventBus_mainActivity;
     @BindView(R.id.btn_BGABanner_mainActivity)
     Button btn_BGABanner_mainActivity;
+    @BindView(R.id.btn_FlycoTabLayout_mainActivity)
+    Button btn_flycoTabLayout_mainActivity;
+    @BindView(R.id.btn_RecyclerView_mainActivity)
+    Button btn_recyclerView_mainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
         //Glide.get(this).clearMemory();//清理内存缓存  可以在UI主线程中进行
     }
 
-    @OnClick({R.id.btn_okHttp_mainActivity, R.id.btn_retrofit_mainActivity, R.id.btn_gson_mainActivity, R.id.btn_leakcanary_mainActivity})
+    @OnClick({R.id.btn_okHttp_mainActivity, R.id.btn_retrofit_mainActivity, R.id.btn_gson_mainActivity,
+            R.id.btn_leakcanary_mainActivity, R.id.btn_eventBus_mainActivity, R.id.btn_FlycoTabLayout_mainActivity, R.id.btn_RecyclerView_mainActivity})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_okHttp_mainActivity:
@@ -127,6 +134,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_leakcanary_mainActivity:
                 startAsyncTask();
+                break;
+            case R.id.btn_eventBus_mainActivity:
+                startActivity(new Intent(MainActivity.this, EventBusTestActivity.class));
+                break;
+            case R.id.btn_FlycoTabLayout_mainActivity:
+                startActivity(new Intent(MainActivity.this, FlycoTabLayoutTestActivity.class));
+                break;
+            case R.id.btn_RecyclerView_mainActivity:
+                startActivity(new Intent(MainActivity.this, RecyclerViewTestActivity.class));
                 break;
         }
     }

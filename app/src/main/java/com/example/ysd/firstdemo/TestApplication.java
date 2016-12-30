@@ -3,12 +3,12 @@ package com.example.ysd.firstdemo;
 import android.app.Application;
 import android.os.StrictMode;
 
+import com.example.ysd.firstdemo.utils.Utils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.squareup.leakcanary.LeakCanary;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.HEAD;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
@@ -31,6 +31,7 @@ public class TestApplication extends Application {
 //        enabledStrictMode();
         //初始化
         LeakCanary.install(this);
+        Utils.init(this);
 //        MultiDex.install(this);
         sInstance = this;
         mEngine = new Retrofit.Builder()
