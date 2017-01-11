@@ -2,6 +2,7 @@ package com.example.ysd.firstdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -42,7 +43,13 @@ public class EventBusTestActivity extends AppCompatActivity {
                 EventBus.getDefault().post(new FirstEvent("FirstEvent btn isClicked"));
                 break;
             case R.id.btn_second_eventBusTestActivity:
-                EventBus.getDefault().post(new SecondEvent("SecondEvent btn isClicked"));
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        EventBus.getDefault().post(new SecondEvent("SecondEvent btn isClicked"));
+                        Log.d("MainActivity", "onEventMainThread收到了消息：" + Thread.currentThread().getName());
+                    }
+                }).start();
                 break;
             case R.id.btn_third_eventBusTestActivity:
                 EventBus.getDefault().post(new ThirdEvent("ThirdEvent btn isClicked"));

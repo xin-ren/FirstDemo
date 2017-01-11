@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.ysd.firstdemo.activity.BGABannerTestActivity;
 import com.example.ysd.firstdemo.activity.FlycoTabLayoutTestActivity;
+import com.example.ysd.firstdemo.activity.PullToRefreshTestActivity;
 import com.example.ysd.firstdemo.activity.RecyclerViewTestActivity;
 import com.example.ysd.firstdemo.event.FirstEvent;
 import com.example.ysd.firstdemo.event.SecondEvent;
@@ -33,6 +34,8 @@ import butterknife.OnClick;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 /**
  * Create by 任新 on 2016/12/23 10:55
@@ -59,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_flycoTabLayout_mainActivity;
     @BindView(R.id.btn_RecyclerView_mainActivity)
     Button btn_recyclerView_mainActivity;
+    @BindView(R.id.btn_pullToRefresh_mainActivity)
+    Button btn_pullToRefresh_mainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_okHttp_mainActivity, R.id.btn_retrofit_mainActivity, R.id.btn_gson_mainActivity,
             R.id.btn_leakcanary_mainActivity, R.id.btn_eventBus_mainActivity, R.id.btn_FlycoTabLayout_mainActivity,
-            R.id.btn_RecyclerView_mainActivity,R.id.btn_BGABanner_mainActivity})
+            R.id.btn_RecyclerView_mainActivity, R.id.btn_BGABanner_mainActivity,R.id.btn_pullToRefresh_mainActivity})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_okHttp_mainActivity:
@@ -149,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_BGABanner_mainActivity:
                 startActivity(new Intent(MainActivity.this, BGABannerTestActivity.class));
                 break;
+            case R.id.btn_pullToRefresh_mainActivity:
+                startActivity(new Intent(MainActivity.this,PullToRefreshTestActivity.class));
         }
     }
 
@@ -211,23 +218,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //SecondEvent接收函数一
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEventMainThread(SecondEvent event) {
-        String msg = "onEventMainThread收到了消息：" + event.getMsg();
-        Log.d("MainActivity", "onEventMainThread收到了消息：" + event.getMsg());
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+    @Subscribe(threadMode = ThreadMode.POSTING)
+    public void onEventPostThread(SecondEvent event) {
+        String msg = "onEventPostThread收到了消息：" + event.getMsg();
+        Log.d("MainActivity", "onEventPostThread收到了消息：" + Thread.currentThread().getName());
+//        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
     //SecondEvent接收函数二
-    @Subscribe(threadMode = ThreadMode.BACKGROUND)
-    public void onEventBackgroundThread(SecondEvent event) {
-        Log.d("MainActivity", "onEventBackground收到了消息：" + event.getMsg());
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(SecondEvent event) {
+        String msg = "onEventMainThread收到了消息：" + event.getMsg();
+        Log.d("MainActivity", "onEventMainThread收到了消息：" + Thread.currentThread().getName());
+//        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
     //SecondEvent接收函数三
+    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+    public void onEventBackgroundThread(SecondEvent event) {
+        Log.d("MainActivity", "onEventBackground收到了消息：" + Thread.currentThread().getName());
+    }
+
+    //SecondEvent接收函数四
     @Subscribe(threadMode = ThreadMode.ASYNC)
     public void onEventAsync(SecondEvent event) {
-        Log.d("MainActivity", "onEventAsync收到了消息：" + event.getMsg());
+        Log.d("MainActivity", "onEventAsync收到了消息：" + Thread.currentThread().getName());
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

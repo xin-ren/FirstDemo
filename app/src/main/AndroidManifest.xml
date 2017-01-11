@@ -48,7 +48,8 @@
         <activity android:name=".activity.ItemDragAndSwipeUseActivity" />
         <activity android:name=".activity.ItemClickActivity" />
         <activity android:name=".activity.ExpandableUseActivity" />
-        <activity android:name=".activity.DataBindingUseActivity"></activity>
+        <activity android:name=".activity.DataBindingUseActivity" />
+        <activity android:name=".activity.PullToRefreshTestActivity"></activity>
     </application>
 
 </manifest>

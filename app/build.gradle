@@ -29,6 +29,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile project(path: ':library_recycler')
+    compile project(':material-spinner-1.0.5')
     compile 'com.android.support:support-v4:25.1.0'
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
@@ -36,6 +38,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.4.0'
 //    compile 'com.android.support:multidex:1.0.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
     compile 'com.google.code.gson:gson:2.6.2'
@@ -45,9 +50,6 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'cn.bingoogolapple:bga-banner:2.1.6@aar'
     compile 'com.facebook.fresco:fresco:0.14.1'
@@ -55,9 +57,10 @@ dependencies {
     compile 'cn.bingoogolapple:bga-adapter:1.1.5@aar'
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar'
     compile 'com.android.support:cardview-v7:25.1.0'
-    compile project(path: ':library_recycler')
-    compile project(':material-spinner-1.0.5')
     compile 'com.kyleduo.switchbutton:library:1.4.4'
     compile 'com.orhanobut:logger:1.15'
     compile 'com.android.support:design:25.1.0'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
+    compile 'org.greenrobot:greendao:3.2.0'
+    compile 'org.greenrobot:greendao-generator:3.2.0'
 }

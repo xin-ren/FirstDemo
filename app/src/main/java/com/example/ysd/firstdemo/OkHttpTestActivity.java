@@ -349,8 +349,6 @@ public class OkHttpTestActivity extends AppCompatActivity {
                 .url(url)
                 .post(requestBody)
                 .build();
-
-
         final okhttp3.OkHttpClient.Builder httpBuilder = new OkHttpClient.Builder();
         OkHttpClient okHttpClient = httpBuilder
                 //设置超时

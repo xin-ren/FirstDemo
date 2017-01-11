@@ -146,6 +146,20 @@
                 android:textColor="#000"
                 android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/btn_pullToRefresh_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#ccc"
+                android:gravity="center"
+                android:text="pullToRefresh"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
             <ImageView
                 android:id="@+id/iv_image_mainActivity"
                 android:layout_width="match_parent"
